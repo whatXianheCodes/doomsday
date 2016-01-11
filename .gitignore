@@ -1,0 +1,7 @@
+*.iml
+
+## Ignore intellij idea folder
+.idea/
+
+## Ignore target output
+doomsday/target
