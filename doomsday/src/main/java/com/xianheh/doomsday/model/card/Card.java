@@ -6,7 +6,7 @@ import lombok.Data;
  * @author Xianhe Huang (xianhehuang@gmail.com)
  */
 @Data
-public class Card {
+public class Card implements Comparable{
     private Suit suit;
     private Rank rank;
     private int id;
@@ -15,5 +15,12 @@ public class Card {
         this.suit = suit;
         this.rank = rank;
         this.id = id;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        int thisRankValue = this.getRank().getValue();
+        int objectRankValue =  ((Card)o).getRank().getValue();
+        return thisRankValue - objectRankValue;
     }
 }
